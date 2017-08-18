@@ -7,7 +7,7 @@ function notify(title, content) {
         title = "桌面提醒";  
         content = "您看到此条信息桌面提醒设置成功";  
     }  
-    var iconUrl = "/images/send_ok.png";  
+    var iconUrl = "images/send_ok.png";  
       
     if (window.webkitNotifications) {  
         //chrome老版本  
