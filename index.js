@@ -54,7 +54,7 @@ function notify(title, content) {
 }
 
 $(document).ready(function(){
-    $("#btn").click(function(){
+    $(".btn").click(function(){
         notify()
     })
 })
