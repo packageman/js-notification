@@ -57,5 +57,38 @@ $(document).ready(function(){
     $(".btn").click(function(){
         notify()
     })
+
+    var introDiv = $('.intro-content');
+
+    introDiv.scroll(function(event) {
+        $('.intro-spec').text('');
+        $('.intro-spec').append("height: " + $(this).height() + "<br/>");
+        $('.intro-spec').append("scrollTop-jquery: " + $(this).scrollTop() + "<br/>");
+        $('.intro-spec').append("scrollTop: " + $(this)[0].scrollTop + "<br/>");
+        $('.intro-spec').append("scrollHeight: " + $(this)[0].scrollHeight + "<br/>");
+        $('.intro-spec').append("clientHeight: " + $(this)[0].clientHeight + "<br/>");    
+    })
+
+    $(window).resize(function(event) {
+        $('.intro-spec').text('');
+        $('.intro-spec').append("height: " + $('.intro-content').height() + "<br/>");
+        $('.intro-spec').append("scrollTop-jquery: " + $('.intro-content').scrollTop() + "<br/>");
+        $('.intro-spec').append("scrollTop: " + $('.intro-content')[0].scrollTop + "<br/>");
+        $('.intro-spec').append("scrollHeight: " + $('.intro-content')[0].scrollHeight + "<br/>");
+        $('.intro-spec').append("clientHeight: " + $('.intro-content')[0].clientHeight + "<br/>");    
+    })
+
+    introDiv.click(function(event) {
+        var scrollTop = $(this)[0].scrollTop;
+        var scrollHeight = $(this)[0].scrollHeight;
+        var clientHeight = $(this)[0].clientHeight;
+
+        if (scrollHeight - clientHeight - scrollTop == 0) {
+            alert("到底了");
+        } else if (scrollHeight - clientHeight - scrollTop < 20) {
+            alert("快到底了");
+        }
+    })
+    
 })
 
