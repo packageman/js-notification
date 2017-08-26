@@ -93,7 +93,8 @@ $(document).ready(function(){
     })
 
     $('.new-messages-tip').click(function(event) {
-        $("#unread").get(0).scrollIntoView();
+        event.preventDefault();
+        $("#unread").scrollintoview();
         // https://stackoverflow.com/questions/12102118/scrollintoview-animation
         // $(".intro-content").animate(
         //     {scrollTop: $('#unread').offset().top }, 
