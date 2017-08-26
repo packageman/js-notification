@@ -66,7 +66,9 @@ $(document).ready(function(){
         $('.intro-spec').append("scrollTop-jquery: " + $(this).scrollTop() + "<br/>");
         $('.intro-spec').append("scrollTop: " + $(this)[0].scrollTop + "<br/>");
         $('.intro-spec').append("scrollHeight: " + $(this)[0].scrollHeight + "<br/>");
-        $('.intro-spec').append("clientHeight: " + $(this)[0].clientHeight + "<br/>");    
+        $('.intro-spec').append("clientHeight: " + $(this)[0].clientHeight + "<br/>");
+        $('.intro-spec').append("unreadOffsetTop: " + $('#unread').offset().top + "<br/>");
+
     })
 
     $(window).resize(function(event) {
@@ -88,6 +90,21 @@ $(document).ready(function(){
         } else if (scrollHeight - clientHeight - scrollTop < 20) {
             alert("快到底了");
         }
+    })
+
+    $('.new-messages-tip').click(function(event) {
+        $("#unread").get(0).scrollIntoView();
+        // https://stackoverflow.com/questions/12102118/scrollintoview-animation
+        // $(".intro-content").animate(
+        //     {scrollTop: $('#unread').offset().top }, 
+        //     {duration: 500,easing: "swing"}
+        // );
+
+        // 会改变 url，再次点击将不起作用
+        // window.location.hash="#unread"; 
+
+        // 会改变 url，每次点击都会起作用
+        // location.href="#unread";
     })
     
 })

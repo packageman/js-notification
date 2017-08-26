@@ -66,18 +66,32 @@ body {
 .intro {
   flex: auto;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .intro-content {
-  height: calc(100% - 300px);
+  height: calc(100% - 200px);
   color: white;
   background-color: gray;
   overflow: auto;
 }
 
 .intro-spec {
-  margin-top: 50px;
   background-color: blue;
   height: 200px;
   color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.new-messages-tip {
+  position: absolute;
+  top: 15px;
+  align-self: center;
+  height: 30px;
+  color: orange;
+  cursor: pointer;
 }
