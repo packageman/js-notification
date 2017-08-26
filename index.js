@@ -58,6 +58,8 @@ $(document).ready(function(){
         notify()
     })
 
+    $("p").eq(10).get(0).scrollIntoView();
+
     var introDiv = $('.intro-content');
 
     introDiv.scroll(function(event) {
