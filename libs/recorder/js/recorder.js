@@ -108,6 +108,11 @@
                         realTimeWorker.terminate();
                     }
 
+                    // close audio context
+                    if (context) {
+                        context.close();
+                    }
+
                     // close media stream
                     if (typeof stream.stop === 'function') {
                         stream.stop();
